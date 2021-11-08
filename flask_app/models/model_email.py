@@ -6,7 +6,7 @@ import re
 
 
 
-class (User)/no():
+class Email():
     def __init__(self,data):
         self.id = data['id']
 
