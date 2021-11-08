@@ -12,7 +12,7 @@
     <div class="container m-5 p-5">
         <div class="block3 p-3">
             <!-- Email Accepted -->
-            <h1>The email address you entered (<span class="span1">Sample</span>) </h1>
+            <h1>The email address you entered (<span class="span1">{{email.email}}</span>) </h1>
             <h1>is a valid email address! Thank you!</h1>
         </div>
         <div class="m-3">
@@ -23,10 +23,12 @@
             <div class="m-4 ml-5">
                 <table class="table table-striped table-hover">
                     <tbody>
+                        {% for email in emails %}
                         <tr>
-                            <td>Sample</td>
-                            <td>Sample</td>
+                            <td>{{email.email}}</td>
+                            <td>{{email.created_at}}</td>
                         </tr>
+                        {% endfor%}
                     </tbody>
                 </table>
             </div>

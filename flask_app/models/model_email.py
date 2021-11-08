@@ -19,7 +19,7 @@ class Email():
         print(input)
         is_valid = True 
         if not EMAIL_REGEX.match(input['email']): 
-            flash("Invalid email address!")
+            flash("Email is not valid!")
             is_valid = False
         return is_valid
 
@@ -33,6 +33,29 @@ class Email():
 
     # ***Retreive***
 
+    @classmethod
+    def get_all(cls):
+        query = "SELECT * FROM emails;"
+        results = connectToMySQL('email_validation').query_db(query)
+        emails = []
+        for email in results:
+            emails.append(email)
+        return emails
+
+    @classmethod
+    def get_one_email(cls,data):
+        query = "SELECT * FROM emails WHERE email = %(email)s;"
+        results = connectToMySQL('email_validation').query_db(query,data)
+        print(results)
+        return cls(results[0])
+
+    @classmethod
+    def get_one(cls,data):
+        print(data)
+        query = "SELECT * FROM emails WHERE id = %(id)s;"
+        results = connectToMySQL('email_validation').query_db(query,data)
+        print(results)
+        return results
 
     # ***Update***
 

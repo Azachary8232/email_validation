@@ -14,6 +14,7 @@ def index():
 def register():
     if not Email.validate_user(request.form):
         return redirect('/')
+    # Email.get_one_email(request.form)
     data = {
         # 'id' : id
         "email" : request.form['email'],
@@ -23,4 +24,9 @@ def register():
 
 @app.route('/saved_emails/<int:id>')
 def email_list(id):
-    return render_template('saved_emails.html')
+    print(id)
+    data = { 'id' : id }
+    emails = Email.get_all()
+    email = Email.get_one(data)
+    print(email)
+    return render_template('saved_emails.html', emails = emails, email = email)
