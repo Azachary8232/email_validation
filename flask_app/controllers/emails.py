@@ -8,4 +8,4 @@ from flask_app.models.model_email import Email
 
 @app.route('/')
 def index():
-    return render_template('email.html')
+    return render_template('saved_emails.html')

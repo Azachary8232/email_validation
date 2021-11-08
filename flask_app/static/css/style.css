@@ -65,3 +65,19 @@ display: flex;
 .btn2{
     box-shadow: 2px 3px black;
 }
+
+
+
+.block2{
+    width: 600px;
+    height: 200px;
+    border-radius: 25px;
+}
+.block3{
+    border: 3px solid black;
+    background-color: darkolivegreen;
+    font-weight: bold;
+}
+.span1{
+    text-decoration: underline;
+}
