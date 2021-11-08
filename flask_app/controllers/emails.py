@@ -23,5 +23,4 @@ def register():
 
 @app.route('/saved_emails/<int:id>')
 def email_list(id):
-    print(id)
     return render_template('saved_emails.html')
