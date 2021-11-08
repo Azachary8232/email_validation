@@ -42,21 +42,6 @@ class Email():
             emails.append(email)
         return emails
 
-    @classmethod
-    def get_one_email(cls,data):
-        query = "SELECT * FROM emails WHERE email = %(email)s;"
-        results = connectToMySQL('email_validation').query_db(query,data)
-        print(results)
-        return cls(results[0])
-
-    @classmethod
-    def get_one(cls,data):
-        print(data)
-        query = "SELECT * FROM emails WHERE id = %(id)s;"
-        results = connectToMySQL('email_validation').query_db(query,data)
-        print(results)
-        return results
-
     # ***Update***
 
     # ***Delete***
